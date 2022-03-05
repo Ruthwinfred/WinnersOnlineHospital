@@ -1,0 +1,121 @@
+<?php
+session_start();
+// initializing variables
+$fname = "";
+$lname = "";
+$uname = "";
+$email = "";
+$dob = "";
+$gender = "";
+$errors = array(); 
+$user_id = "";
+
+// connect to the database
+$db = mysqli_connect('localhost', 'root', '', 'myhospital');
+
+// REGISTER USER
+if (isset($_POST['reg'])) {
+  // receive all input values from the form
+  $fname = mysqli_real_escape_string($db, $_POST['fname']);
+  $lname = mysqli_real_escape_string($db, $_POST['lname']);
+  $uname = mysqli_real_escape_string($db, $_POST['uname']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $dob = mysqli_real_escape_string($db, $_POST['dob']);
+  $gender = mysqli_real_escape_string($db, $_POST['gender']);
+  $pass = mysqli_real_escape_string($db, $_POST['pass']);
+  $cpass = mysqli_real_escape_string($db, $_POST['cpass']);
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($fname)) { array_push($errors, "First name is required"); }
+  if (empty($lname)) { array_push($errors, "Last name is required"); }
+  if (empty($uname)) { array_push($errors, "Username is required"); }
+  if (empty($email)) { array_push($errors, "Email is required"); }
+  if (empty($dob)) { array_push($errors, "Enter your date of birth"); }
+  if (empty($gender)) { array_push($errors, "Chose your gender"); }
+  if (empty($pass)) { array_push($errors, "Password is required"); }
+  if ($pass != $cpass) {
+	array_push($errors, "The two passwords do not match");
+  }
+
+  // first check the database to make sure 
+  // a user does not already exist with the same username and/or email
+  $user_check_query = "SELECT * FROM users WHERE uname='$uname' OR email='$email' LIMIT 1";
+  $result = mysqli_query($db, $user_check_query);
+  $user = mysqli_fetch_assoc($result);
+  
+  if ($user) { // if user exists
+    if ($user['uname'] === $uname) {
+      array_push($errors, "Username already exists");
+    }
+
+    if ($user['email'] === $email) {
+      array_push($errors, "email already exists");
+    }
+  }
+
+  // Finally, register user if there are no errors in the form
+  if (count($errors) == 0) {
+  	$pass = md5($pass);//encrypt the password before saving in the database
+
+  	$query = "INSERT INTO users (fname, lname, uname, email,dob,gender, pass) 
+  			  VALUES('$fname','$lname','$uname', '$email', '$dob', '$gender', '$pass')";
+  	mysqli_query($db, $query);
+  	$_SESSION['uname'] = $uname;
+  	$_SESSION['success'] = "";
+  	header('location: login.php');
+  }
+}
+ 
+
+// LOG USER IN
+if (isset($_POST['log'])) {
+  // Get username and password from login form
+  $uname = mysqli_real_escape_string($db, $_POST['uname']);
+  $pass = mysqli_real_escape_string($db, $_POST['pass']);
+  // validate form
+  if (empty($uname)) array_push($errors, "Username or Email is required");
+  if (empty($pass)) array_push($errors, "Password is required");
+
+  // if no error in form, log user in
+  if (count($errors) == 0) {
+    $pass = md5($pass);
+    $sql = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
+    $results = mysqli_query($db, $sql);
+
+    if (mysqli_num_rows($results) == 1) {
+      $_SESSION['uname'] = $uname;
+      $_SESSION['success'] = "You are now logged in";
+      header('location: index.php');
+    }else {
+      array_push($errors, "Wrong credentials");
+    }
+  }
+}
+
+
+
+//SUBMIT PATIENT'S CONSULTATION REQUEST
+if (isset($_POST['cons'])) {
+  // receive all input values from the form
+  $problem = mysqli_real_escape_string($db, $_POST['problem']);
+  $hehi = mysqli_real_escape_string($db, $_POST['hehi']);
+  $adds = mysqli_real_escape_string($db, $_POST['adds']);
+  $aob = mysqli_real_escape_string($db, $_POST['aob']);
+
+  // form validation: ensure that the form is correctly filled ...
+  // by adding (array_push()) corresponding error unto $errors array
+  if (empty($problem)) { array_push($errors, "Problem field must be filled"); }
+  if (empty($hehi)) { array_push($errors, "Health history should not be empty"); }
+  if (empty($adds)) { array_push($errors, "State any addictions or habits"); }
+  if (empty($aob)) { array_push($errors, "State any other issue"); }
+  if (count($errors) == 0) {
+	$query = "INSERT INTO patients ( problem, hehi, adds, aob) 
+  			  VALUES('$problem', '$hehi', '$adds', '$aob')";
+          	mysqli_query($db, $query);
+            $_SESSION['success'] = "Your request has been submitted";
+  }
+}
+
+
+?>
