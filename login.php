@@ -17,11 +17,10 @@
 </head>
 <!-- Head ends here -->
 <body class="bodi">
-    <div class="row">
-       
-            <div class="container">
-<form method="post" action="" id="contact">
 <?php include('errors.php'); ?>
+    <div class="row">
+        <div class="container">
+<form method="post" action="" id="contact">
 <h3> Winners Online Hospital</h3>  
     <h4><i class="fa">&#xf2be;</i>Patient access</h4>
     <fieldset>

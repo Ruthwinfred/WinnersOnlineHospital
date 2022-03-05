@@ -81,9 +81,8 @@ if (isset($_POST['log'])) {
   if (count($errors) == 0) {
     $pass = md5($pass);
     $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
-    $results = mysqli_query($db, $sql);
-
-    if (mysqli_num_rows($results) == 1) {
+    $results = mysqli_query($db, $query);
+  if (mysqli_num_rows($results) == 1) {
       $_SESSION['uname'] = $uname;
       $_SESSION['success'] = "You are now logged in";
       header('location: index.php');
@@ -92,30 +91,4 @@ if (isset($_POST['log'])) {
     }
   }
 }
-
-
-
-//SUBMIT PATIENT'S CONSULTATION REQUEST
-if (isset($_POST['cons'])) {
-  // receive all input values from the form
-  $problem = mysqli_real_escape_string($db, $_POST['problem']);
-  $hehi = mysqli_real_escape_string($db, $_POST['hehi']);
-  $adds = mysqli_real_escape_string($db, $_POST['adds']);
-  $aob = mysqli_real_escape_string($db, $_POST['aob']);
-
-  // form validation: ensure that the form is correctly filled ...
-  // by adding (array_push()) corresponding error unto $errors array
-  if (empty($problem)) { array_push($errors, "Problem field must be filled"); }
-  if (empty($hehi)) { array_push($errors, "Health history should not be empty"); }
-  if (empty($adds)) { array_push($errors, "State any addictions or habits"); }
-  if (empty($aob)) { array_push($errors, "State any other issue"); }
-  if (count($errors) == 0) {
-	$query = "INSERT INTO patients ( problem, hehi, adds, aob) 
-  			  VALUES('$problem', '$hehi', '$adds', '$aob')";
-          	mysqli_query($db, $query);
-            $_SESSION['success'] = "Your request has been submitted";
-  }
-}
-
-
 ?>

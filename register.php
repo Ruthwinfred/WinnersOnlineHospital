@@ -17,12 +17,12 @@
 </head>
 <!-- Head ends here -->
 <body class="bodi">
+<?php include('errors.php'); ?>
 <div class="row">
     <div class="container">
 <form method="post" action="register.php" id="contact">
 <h3>Winners Online Hospital</h3>  
     <h4><i class="fa">&#xf234;</i>Patient registration</h4>
-    <?php include('errors.php'); ?>
     <fieldset>
    <input type="text" name="fname" value="<?php echo $fname; ?>" placeholder="Enter your first name .....">
 </fieldset>
@@ -37,9 +37,9 @@
 <fieldset>
     <input type="date" name="dob" value="<?php echo $dob; ?>" placeholder="Date of birth.....">
     </fieldset>
-    <h id="g">Gender:</h> <input type="radio" value="male" name="gender"><h id="g">Male</h>
-            <input type="radio" value="female" name="gender"><h id="g">female</h>
-            <input type="radio" value="other" name="gender"><h id="g">Other</h>
+    <h id="g">Gender:</h> <input type="radio"  value="Male" name="gender"><h id="g">Male</h>
+            <input type="radio"  value="Female" name="gender"><h id="g">Female</h>
+            <input type="radio"  value="Other"  name="gender"><h id="g">Other</h>
     <fieldset>
 <input type="password" name="pass" placeholder="Create a password .....">
 </fieldset>
