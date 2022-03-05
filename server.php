@@ -8,7 +8,7 @@ $email = "";
 $dob = "";
 $gender = "";
 $errors = array(); 
-$user_id = "";
+
 
 // connect to the database
 $db = mysqli_connect('localhost', 'root', '', 'myhospital');
@@ -80,7 +80,7 @@ if (isset($_POST['log'])) {
   // if no error in form, log user in
   if (count($errors) == 0) {
     $pass = md5($pass);
-    $sql = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
+    $query = "SELECT * FROM users WHERE uname='$uname' AND pass='$pass'";
     $results = mysqli_query($db, $sql);
 
     if (mysqli_num_rows($results) == 1) {

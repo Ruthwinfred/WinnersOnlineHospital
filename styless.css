@@ -195,6 +195,13 @@ fieldset {
     text-align: left;
     font-size: 10px;
   }
+  .success {
+    color: #3c763d; 
+    background: #dff0d8; 
+    border: 1px solid #3c763d;
+    margin-bottom: 20px;
+  }
+  
   a:link{
       text-decoration: none;
   }

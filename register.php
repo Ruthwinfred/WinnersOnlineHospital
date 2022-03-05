@@ -17,25 +17,25 @@
 </head>
 <!-- Head ends here -->
 <body class="bodi">
-<?php include('errors.php'); ?>
 <div class="row">
     <div class="container">
 <form method="post" action="register.php" id="contact">
 <h3>Winners Online Hospital</h3>  
     <h4><i class="fa">&#xf234;</i>Patient registration</h4>
+    <?php include('errors.php'); ?>
     <fieldset>
-   <input type="text" name="fname" placeholder="Enter your first name .....">
+   <input type="text" name="fname" value="<?php echo $fname; ?>" placeholder="Enter your first name .....">
 </fieldset>
 <fieldset>
-    <input type="text" name="lname" placeholder="Enter your last name .....">
+    <input type="text" name="lname"  value="<?php echo $lname; ?>" placeholder="Enter your last name .....">
 <fieldset>
-   <input type="text" name="uname" placeholder="Enter your username .....">
+   <input type="text" name="uname"  value="<?php echo $uname; ?>" placeholder="Enter your username .....">
 </fieldset>
 <fieldset>
-   <input type="email" name="email"  placeholder="Enter your Email address .....">
+   <input type="email" name="email"  value="<?php echo $email; ?>" placeholder="Enter your Email address .....">
 </fieldset>
 <fieldset>
-    <input type="date" name="dob" placeholder="Date of birth.....">
+    <input type="date" name="dob" value="<?php echo $dob; ?>" placeholder="Date of birth.....">
     </fieldset>
     <h id="g">Gender:</h> <input type="radio" value="male" name="gender"><h id="g">Male</h>
             <input type="radio" value="female" name="gender"><h id="g">female</h>
