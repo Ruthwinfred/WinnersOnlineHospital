@@ -59,7 +59,7 @@ if ($conn->connect_error) {
 <body class="bodi">
 
 
-
+<a href="index.php">Back</a>
 
 <div class="row">
     <div class="container">

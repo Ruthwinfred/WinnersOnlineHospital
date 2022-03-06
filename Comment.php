@@ -55,7 +55,7 @@
 		$sql = "UPDATE patients SET problem='$problem', com='$com' WHERE user_id = '$user_id'";
 
 		if ($conn->query($sql) === TRUE) {
-			header('Location: View.php');
+			header('Location: ViewA.php');
 		}else{
 			echo "Failed to update".$conn->error;
 		}

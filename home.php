@@ -73,7 +73,7 @@
         caused by matters that do not need to see a doctor physically. Some people who have a problem on getting the proper medicare they need 
         can be directed via online means.To sum it all, Winners online hospital is here to fill the gap between patients and hospitals by cutting
         down on time and transport expenses</p>
-      <br><button class="btn btn-default btn-lg">Get in Touch</button>
+     
     </div>
     <div class="col-sm-4">
       <img src="img/ohp.jpg" id="log">
@@ -93,7 +93,7 @@
 
 
 <div class="row">
-  <center><h>CORE VALUES</h></center>
+  <center><h style="color:black"><strong>CORE VALUES</strong></h></center>
   <hr>
   <div class="col-sm-3">
     <h>PATIENT PRIORITY</h><br>
@@ -213,17 +213,54 @@
 
  
   <!-- Container (Contact Section) -->
+
+  <?php
+	if (isset($_POST['sub'])) {
+		$name = $_POST['name'];
+ $email = $_POST['email'];
+ $com = $_POST['com'];
+
+//db credentials
+$servername = 'localhost';
+$dbusername = "root";
+$dbpassword = "";
+$dbname = "myhospital";
+
+//connecting to the database
+$conn = new mysqli($servername, $dbusername, $dbpassword, $dbname);
+
+//checking errors
+if ($conn->connect_error) {
+	die("Connection error".$conn->connect_error);
+}
+
+//insert values into db
+	$sql = "INSERT INTO sugbox(name,email,com)
+   VALUES('$name','$email','$com')";
+
+	//execute the query
+	if ($conn->query($sql) === TRUE) {
+        echo  "<center><p style='margin-left:650px;margin-bottom:-100px;color:skyblue;font-size:small'>Dear ".$name. ",Your request has been successfully submitted. And we will get back to you
+        through ".$email. ".<br>Thanks and stay safe!</p></center>";
+	}else{
+		echo "Failled to register";
+	}
+
+	$conn->close();
+	}
+?>
 <div id="contact" class="container-fluid bg-grey">
-    <h2 class="text-center">CONTACT</h2>
+    <h2 class="text-center">CONTACT WINNERS</h2>
     <div class="row">
       <div class="col-sm-5">
         <p>Contact us and we'll get back to you within 24 hours.</p>
-        <p><span class="glyphicon glyphicon-map-marker"></span> Nairobi Kenya</p>
-        <p><span class="glyphicon glyphicon-phone"></span> +254 706044980</p>
-        <p><span class="glyphicon glyphicon-envelope"></span> reuwinn@yahoo.com</p>
+        <p><span class="glyphicon glyphicon-map-marker" style="color:blue"></span> Nairobi Kenya</p>
+        <p><span class="glyphicon glyphicon-phone" style="color:blue"></span> +254 706044980</p>
+        <p><span class="glyphicon glyphicon-envelope" style="color:blue"></span> reuwinn@yahoo.com</p>
       </div>
       <div class="col-sm-7 slideanim">
         <div class="row">
+          <form method="post" id="fm">
           <div class="col-sm-6 form-group">
             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
           </div>
@@ -231,11 +268,12 @@
             <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
           </div>
         </div>
-        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+        <textarea class="form-control" id="comments" name="com" placeholder="Comment" rows="5" required></textarea><br>
         <div class="row">
           <div class="col-sm-12 form-group">
-            <button class="btn btn-default pull-right" type="submit">Send</button>
+            <button class="btn btn-default pull-right" type="submit" name="sub">Send</button>
           </div>
+</form>
         </div>
       </div>
     </div>
@@ -245,16 +283,20 @@
   <div class="container-fluid" id="ft">
 
   <div class="row" >
-    <div class="col-sm-4">
+    <div class="col-sm-3">
+      <hr>
+<img src="img/logo.png" id="l">
+    </div>
+    <div class="col-sm-3">
       The online doctor consultation and appointment is a system that is meant to connect patients to health specialists through hospitals of their 
          choice. Unlike other madical apps, it is owned by a hospital and not an individual doctor to avoid fraud and accountability in case of any
          problem.
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <b>CONTACT US</b><br>Location:<br>Parklands Nairobi lane<br>reuwinn@yahoo.com<br>rruwinn@yahoo.com<br>thywinners@gmail.com.<br> <i class="fa fa-phone" 
       id="f" aria-hidden="true">&nbsp;&nbsp;+254706048874</i><br><i class="fa fa-phone" id="f" aria-hidden="true">&nbsp;&nbsp;+254706044980</i>
     </div>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <b>QUICK LINKS</b><br><a href="#myPage" style="color: white;">Home</a><br><a href="#about" style="color: white;">About us</a><br><a href="#services" style="color: white;">Services</a>
       <br><a href="#contact" style="color: white;">Contact us</a><br><a href="login.php" style="color: white;">Book appointment</a>
       <br><a href="login.php" style="color: white;">Dashboard</a></h><br>

@@ -132,6 +132,9 @@ body {
     margin-top: -300px;
     margin-right: 900px;
   }
+  #l{
+    border-radius: 50%;
+  }
   .thumbnail {
     padding: 0 0 15px 0;
     border: none;
@@ -223,6 +226,7 @@ body {
     border-color: transparent;
     color: #fff !important;
   }
+  
   footer .glyphicon {
     font-size: 20px;
     /* margin-bottom: 20px; */
