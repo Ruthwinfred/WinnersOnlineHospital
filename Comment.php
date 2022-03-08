@@ -3,12 +3,12 @@
 		$edit_id = $_GET['id'];
 		include 'db.php';
 
-		$sql = "SELECT * FROM patients WHERE user_id = '$edit_id'";
+		$sql = "SELECT * FROM patients WHERE id = '$edit_id'";
 		$results = $conn->query($sql);
 
 		if ($results->num_rows > 0) {
 		while ($row = $results->fetch_assoc()) {
-		$db_id = $row['user_id'];
+		$db_id = $row['id'];
         $db_problem = $row['problem'];
 		}
 	}
@@ -30,7 +30,7 @@
 <div class="container">
 <form method="post" id="contact">
 	<fieldset>
-	<input type="text" name="user_id" value="<?php echo $db_id; ?>" placeholder="User id">&nbsp;&nbsp;
+	<input type="text" name="id" value="<?php echo $db_id; ?>" placeholder="User id">&nbsp;&nbsp;
 </fieldset>
 <fieldset>
     <input type="text" name="problem" value="<?php echo $db_problem; ?>"  placeholder="Problem">&nbsp;&nbsp;
@@ -46,13 +46,13 @@
 
 <?php
 	if (isset($_POST['update'])) {
-		$user_id = $_POST['user_id'];
+		$id = $_POST['id'];
         $problem = $_POST['problem'];
         $com = $_POST['com'];
 
 		require_once 'db.php';
 
-		$sql = "UPDATE patients SET problem='$problem', com='$com' WHERE user_id = '$user_id'";
+		$sql = "UPDATE patients SET problem='$problem', com='$com' WHERE id = '$id'";
 
 		if ($conn->query($sql) === TRUE) {
 			header('Location: ViewA.php');

@@ -199,10 +199,13 @@ fieldset {
     font-size: 10px;
   }
   .success {
-    color: #3c763d; 
-    background: #dff0d8; 
-    border: 1px solid #3c763d;
-    margin-bottom: 20px;
+    color: rgba(247, 241, 241, 0.989); 
+    float: left;
+    margin-left: 0px;
+    font-size: small;
+    /* background: #dff0d8;  */
+    /* border: 1px solid #3c763d; */
+    /* margin-bottom: 20px; */
   }
   
   a:link{

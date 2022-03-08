@@ -92,7 +92,7 @@ body {
     display: none;
     position: absolute;
     background-color: rgba(0,0,0, .2);
-    min-width: 160px;
+    min-width: 165px;
     overflow: right;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;

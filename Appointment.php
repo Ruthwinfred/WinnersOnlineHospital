@@ -4,7 +4,7 @@
  $hehi = $_POST['hehi'];
  $adds = $_POST['adds'];
  $aob = $_POST['aob'];
-
+ 
 
 
 
@@ -25,6 +25,7 @@ if ($conn->connect_error) {
 //insert values into db
 	$sql = "INSERT INTO patients(problem,hehi,adds,aob)
    VALUES('$problem','$hehi','$adds','$aob')";
+   
 
 	//execute the query
 	if ($conn->query($sql) === TRUE) {
@@ -59,7 +60,7 @@ if ($conn->connect_error) {
 <body class="bodi">
 
 
-<a href="index.php">Back</a>
+<a href="index.php">Dashboard</a>
 
 <div class="row">
     <div class="container">
@@ -77,6 +78,7 @@ if ($conn->connect_error) {
     <textarea name="hehi" placeholder="Briefly explain your health history here......." required></textarea>
     <textarea name="adds" placeholder="Have any habits or addictions?......." required></textarea>
     <textarea name="aob" placeholder="Have any other issue?......." required></textarea>
+    <textarea name="user_id" placeholder="Have any other issue?......." required></textarea>
     <button type="submit" id="but" name="cons">Book appointment</button>
 </form>
 </div>

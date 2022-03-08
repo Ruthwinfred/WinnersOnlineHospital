@@ -18,8 +18,8 @@ $sql = "SELECT * FROM sugbox";
 $results = $conn->query($sql);
 
 if ($results->num_rows > 0) {
-    echo "<link rel='stylesheet' href='table.css'><table> 
-    <a href='AdminD.php'>Back</a><center>The sugestion box<br></center>
+    echo "<body style='background-color:#171515'><link rel='stylesheet' href='table.css'><table> 
+    <a href='AdminD.php'>Dashboard</a><center style='color:white'>The sugestion box<hr><br></center>
 		  <tr>
 		  <th>Id</th>
 		  <th>Name</th>

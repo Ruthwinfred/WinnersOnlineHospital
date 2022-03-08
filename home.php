@@ -32,7 +32,7 @@
             <span class="icon-bar"></span>                        
           </button>
          
-          <a class="navbar-brand" href="home.html">Home</a>
+          <a class="navbar-brand" href="home.php">Home</a>
         </div>
         
         <div class="collapse navbar-collapse" id="myNavbar">
@@ -288,7 +288,7 @@ if ($conn->connect_error) {
 <img src="img/logo.png" id="l">
     </div>
     <div class="col-sm-3">
-      The online doctor consultation and appointment is a system that is meant to connect patients to health specialists through hospitals of their 
+      The Winners Online Hospital is a system that is meant to connect patients to health specialists through hospitals of their 
          choice. Unlike other madical apps, it is owned by a hospital and not an individual doctor to avoid fraud and accountability in case of any
          problem.
     </div>
@@ -300,10 +300,10 @@ if ($conn->connect_error) {
       <b>QUICK LINKS</b><br><a href="#myPage" style="color: white;">Home</a><br><a href="#about" style="color: white;">About us</a><br><a href="#services" style="color: white;">Services</a>
       <br><a href="#contact" style="color: white;">Contact us</a><br><a href="login.php" style="color: white;">Book appointment</a>
       <br><a href="login.php" style="color: white;">Dashboard</a></h><br>
-       <a href="https://www.facebook.com/ruth.winfred.35"><i class="fa" style="color: white;">&#xf082;</i></a>
-<a href="https://twitter.com/Truthwinners"><i class="fa" style="color: white;">&#xf099;</i></a>
-<a href=""><i class="fa" style="color: white;">&#xf1d7;</i></a>
-<a href="https://studio.youtube.com/channel/UC5zI55p27zYcJ8YyRfZ_sUA/editing/images"><i class="fa" style="color: white;">&#xf16a;</i></a>
+       <a href="https://www.facebook.com/ruth.winfred.35"><i class="fa" style="color: white;">&#xf082;</i></a>&nbsp;
+<a href="https://twitter.com/Truthwinners"><i class="fa" style="color: white;">&#xf099;</i></a>&nbsp;
+<a href=""><i class="fa" style="color: white;">&#xf1d7;</i></a>&nbsp;
+<a href="https://github.com/Ruthwinfred/My-portfolio"><i class="fa"  style="color: white;">&#xf092;</a>&nbsp;
 <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fa" style="color: white;">&#xf08c;</i></a>
     </div>
   </div>
