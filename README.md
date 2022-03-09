@@ -14,7 +14,7 @@ In this project, I used the following technologies:
 * PHP
 * MySQL
 
-To use the online form, you'll land on the home window which consist of various pages that will help you navigate to other parts of the system. But accessing our services will require
+To use the online hospital, you'll land on the home window which consist of various pages that will help you navigate to other parts of the system. But accessing our services will require
 a patient to creat an account by clicking on the patient iccon on the top nav in the home page, chose sign up then register. After successfull registration, the form will take you
 to a login page which after filling correctly, will lead you to the fashboard where you can fully access our services.
 
