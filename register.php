@@ -24,29 +24,29 @@
 <h3>Winners Online Hospital</h3>  
     <h4><i class="fa">&#xf234;</i>Patient registration</h4>
     <fieldset>
-   <input type="text" name="fname" value="<?php echo $fname; ?>" placeholder="Enter your first name .....">
+   <input type="text" name="fname" value="<?php echo $fname; ?>" placeholder="Enter your first name ....." title="Write here your first name">
 </fieldset>
 <fieldset>
-    <input type="text" name="lname"  value="<?php echo $lname; ?>" placeholder="Enter your last name .....">
+    <input type="text" name="lname"  value="<?php echo $lname; ?>" placeholder="Enter your last name ....." title="Write here your second name">
 <fieldset>
-   <input type="text" name="uname"  value="<?php echo $uname; ?>" placeholder="Enter your username .....">
+   <input type="text" name="uname"  value="<?php echo $uname; ?>" placeholder="Enter your username ....."title="Write the username you'll be using to log in">
 </fieldset>
 <fieldset>
-   <input type="email" name="email"  value="<?php echo $email; ?>" placeholder="Enter your Email address .....">
+   <input type="email" name="email"  value="<?php echo $email; ?>" placeholder="Enter your Email address ....." title="Write here your email">
 </fieldset>
 <fieldset>
-    <input type="date" name="dob" value="<?php echo $dob; ?>" placeholder="Date of birth.....">
+    <input type="date" name="dob" value="<?php echo $dob; ?>" placeholder="Date of birth....." title="Enter your correct date of birth">
     </fieldset>
     <h id="g">Gender:</h> <input type="radio"  value="Male" name="gender"><h id="g">Male</h>
             <input type="radio"  value="Female" name="gender"><h id="g">Female</h>
             <input type="radio"  value="Other"  name="gender"><h id="g">Other</h>
     <fieldset>
-<input type="password" name="pass" placeholder="Create a password .....">
+<input type="password" name="pass" placeholder="Create a password ....." title="Create your password that you'll be using to log in">
 </fieldset>
-   <input type="password" name="cpass" placeholder="Confirm your password .....">
+   <input type="password" name="cpass" placeholder="Confirm your password ....." title="Repeat the password you created up there">
 </fieldset>
 </fieldset>
-<button type="submit" id="but" name="reg">Register</button>
+<button type="submit" id="but" name="reg" title="Submit the form after filing all fields correctly">Register</button>
 <fieldset>
    <h4> Already have an account? Then<a href="login.php" id="r"> login</a> instead.</h4>
 </form>

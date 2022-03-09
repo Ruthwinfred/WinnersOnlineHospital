@@ -67,7 +67,7 @@ if ($conn->connect_error) {
 <form method="post" action="" id="contact">
 <div class="d">
     <h3>Appointment with Winners</h>
-    <select name="problem" required>
+    <select name="problem" required title="Select here one of our services">
         <option value="Marriege and counseling">Marriege counseling</option>
         <option value="Anger management">Anger management</option>
         <option value="Depression">Depression</option>
@@ -75,11 +75,10 @@ if ($conn->connect_error) {
         <option value="Food allergy">Food allergy</option>
         <option value="Anorexiao">Anorexia</option>
     </select>
-    <textarea name="hehi" placeholder="Briefly explain your health history here......." required></textarea>
-    <textarea name="adds" placeholder="Have any habits or addictions?......." required></textarea>
-    <textarea name="aob" placeholder="Have any other issue?......." required></textarea>
-    <textarea name="user_id" placeholder="Have any other issue?......." required></textarea>
-    <button type="submit" id="but" name="cons">Book appointment</button>
+    <textarea name="hehi" placeholder="Briefly explain your health history here......." required title="Do you have any health issues?"></textarea>
+    <textarea name="adds" placeholder="Have any habits or addictions?......." required title="Are you addicted to any substance or have a unique lifestyle?"></textarea>
+    <textarea name="aob" placeholder="Have any other issue?......." required title="Is there anything else you want to tell us?"></textarea>
+    <button type="submit" id="but" name="cons" title="Submit the form after filling all fields correctly.">Book appointment</button>
 </form>
 </div>
     </div>

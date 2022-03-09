@@ -24,12 +24,12 @@
 <h3> Winners Online Hospital</h3>  
     <h4><i class="fa">&#xf2be;</i>Patient access</h4>
     <fieldset>
-    <input type="text" name="uname" placeholder="Enter username">
+    <input type="text" name="uname" placeholder="Enter username" title="Enter the username you used when registering your account.">
 </fieldset>
 <fieldset>
-    <input type="password" name="pass" placeholder="Enter your password .....">
+    <input type="password" name="pass" placeholder="Enter your password ....." title="Enter the password you used when registering your account.">
 </fieldset>
-   <button type="submit" id="but" name="log">Let me in</button>
+   <button type="submit" id="but" name="log" title="Submit the form after filling all fields correctly.">Let me in</button>
    <h4>Don't have an account? Click <a href="register.php" id="r">here</a> to register.</h4>
 </form>
 
