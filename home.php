@@ -41,7 +41,7 @@
             <li><a href="#services">SERVICES</a></li>
             <li><a href="#contact">CONTACT</a></li>
             <li><a href="login.php">DASHBOARD</a></li>
-            <li><button onclick="myFunction1()" class="dropbtn"><i class="fa">&#xf2be;</i>Patient</button>
+            <li><button onclick="myFunction1()" class="dropbtn"><i class="fa">&#xf2be;</i>USER</button>
                 <div id="myDropdown" class="dropdown-content">
                   <a href="register.php"><i class="fa">&#xf234;</i>Sign up</a>
                   <hr>
@@ -143,8 +143,8 @@
     </ol> 
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
+    <div class="carousel-inner" role="listbox" style="background-color:rgba(22, 60, 215, 0.763)">
+      <div class="item active" >
         <h4>"Three days after delivery,I realised that my baby's eyes were turning yellow. <br>I did't know what to do and I was fed up with the journey 
             back to hospital.<br> In just a phone call, I got a lasting solution to the problem. Thanks to online consultation."<br><span>Phylis Dans Winners
                 former patient.</span></h4>
@@ -217,7 +217,7 @@
   <?php
 	if (isset($_POST['sub'])) {
 		$name = $_POST['name'];
- $email = $_POST['email'];
+ $phn = $_POST['phn'];
  $com = $_POST['com'];
 
 //db credentials
@@ -235,13 +235,13 @@ if ($conn->connect_error) {
 }
 
 //insert values into db
-	$sql = "INSERT INTO sugbox(name,email,com)
-   VALUES('$name','$email','$com')";
+	$sql = "INSERT INTO sugbox(name,phn,com)
+   VALUES('$name','$phn','$com')";
 
 	//execute the query
 	if ($conn->query($sql) === TRUE) {
         echo  "<center><p style='margin-left:650px;margin-bottom:-100px;color:skyblue;font-size:small'>Dear ".$name. ",Your request has been successfully submitted. And we will get back to you
-        through ".$email. ".<br>Thanks and stay safe!</p></center>";
+        through ".$phn. ".<br>Thanks and stay safe!</p></center>";
 	}else{
 		echo "Failled to register";
 	}
@@ -265,7 +265,7 @@ if ($conn->connect_error) {
             <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
           </div>
           <div class="col-sm-6 form-group">
-            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+            <input class="form-control" id="number" name="phn" placeholder="phone number" type="text" required>
           </div>
         </div>
         <textarea class="form-control" id="comments" name="com" placeholder="Comment" rows="5" required></textarea><br>

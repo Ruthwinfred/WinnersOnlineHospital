@@ -84,7 +84,7 @@ if (isset($_POST['log'])) {
     $results = mysqli_query($db, $query);
   if (mysqli_num_rows($results) == 1) {
       $_SESSION['uname'] = $uname;
-      $_SESSION['success'] = "<p style='float:left; margin-right:10px; margin-top:0px'>You are now logged in</p>";
+      $_SESSION['success'] = "";
       header('location: index.php');
     }else {
       array_push($errors, "Wrong credentials");
@@ -94,7 +94,7 @@ if (isset($_POST['log'])) {
 
 
 
-// REGISTER USER
+// REGISTER ADMIN
 if (isset($_POST['regi'])) {
   // receive all input values from the form
   $username = mysqli_real_escape_string($db, $_POST['username']);
@@ -152,7 +152,7 @@ if (isset($_POST['ent'])) {
     $results = mysqli_query($db, $query);
   if (mysqli_num_rows($results) == 1) {
       $_SESSION['username'] = $username;
-      $_SESSION['success'] = "You are now on the admin page";
+      $_SESSION['success'] = "";
       header('location: AdminD.php');
     }else {
       array_push($errors, "Wrong credentials");

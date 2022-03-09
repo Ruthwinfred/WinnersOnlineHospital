@@ -19,7 +19,7 @@ $results = $conn->query($sql);
 
 if ($results->num_rows > 0) {
     echo "<body style='background-color:#171515'><link rel='stylesheet' href='table.css'><table> 
-    <a href='AdminD.php'>Dasboard</a><center style='color:white'>Patient appointment details<hr><br></center>
+    <a href='AdminD.php' style='color:white;text-decoration:none'>Dasboard</a><center style='color:white'>Patient appointment details<hr><br></center>
 		  <tr>
 		  <th>Id</th>
 		  <th>Problem</th>

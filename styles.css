@@ -150,10 +150,10 @@ body {
     color: #f4511e;
   }
   .carousel-indicators li {
-    border-color: rgba(22, 60, 215, 0.763);
+    border-color: rgba(243, 244, 247, 0.763);
   }
   .carousel-indicators li.active {
-    background-color: rgba(22, 60, 215, 0.763);
+    background-color: rgba(236, 237, 242, 0.763);
   }
   .item h4 {
     font-size: 19px;
