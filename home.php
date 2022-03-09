@@ -280,7 +280,8 @@ if ($conn->connect_error) {
   </div>
   <!-- Image of location/map -->
 
-  <div class="container-fluid" id="ft">
+ 
+  <footer class="container-fluid text-center">
 
   <div class="row" >
     <div class="col-sm-3">
@@ -288,16 +289,16 @@ if ($conn->connect_error) {
 <img src="img/logo.png" id="l">
     </div>
     <div class="col-sm-3">
-      The Winners Online Hospital is a system that is meant to connect patients to health specialists through hospitals of their 
+     <h style="color:white"> The Winners Online Hospital is a system that is meant to connect patients to health specialists through hospitals of their 
          choice. Unlike other madical apps, it is owned by a hospital and not an individual doctor to avoid fraud and accountability in case of any
-         problem.
+         problem.</h>
     </div>
     <div class="col-sm-3">
-      <b>CONTACT US</b><br>Location:<br>Parklands Nairobi lane<br>reuwinn@yahoo.com<br>rruwinn@yahoo.com<br>thywinners@gmail.com.<br> <i class="fa fa-phone" 
-      id="f" aria-hidden="true">&nbsp;&nbsp;+254706048874</i><br><i class="fa fa-phone" id="f" aria-hidden="true">&nbsp;&nbsp;+254706044980</i>
+      <b style="color:white">CONTACT US</b><br><h style="color:white">Location:<br>Parklands Nairobi lane<br>reuwinn@yahoo.com<br>rruwinn@yahoo.com<br>thywinners@gmail.com.<br> <i class="fa fa-phone" 
+      id="f" aria-hidden="true">&nbsp;&nbsp;+254706048874</i><br><i class="fa fa-phone" id="f" aria-hidden="true">&nbsp;&nbsp;+254706044980</i></h>
     </div>
     <div class="col-sm-3">
-      <b>QUICK LINKS</b><br><a href="#myPage" style="color: white;">Home</a><br><a href="#about" style="color: white;">About us</a><br><a href="#services" style="color: white;">Services</a>
+      <b style="color:white">QUICK LINKS</b><br><a href="#myPage" style="color: white;">Home</a><br><a href="#about" style="color: white;">About us</a><br><a href="#services" style="color: white;">Services</a>
       <br><a href="#contact" style="color: white;">Contact us</a><br><a href="login.php" style="color: white;">Book appointment</a>
       <br><a href="login.php" style="color: white;">Dashboard</a></h><br>
        <a href="https://www.facebook.com/ruth.winfred.35"><i class="fa" style="color: white;">&#xf082;</i></a>&nbsp;
@@ -307,14 +308,10 @@ if ($conn->connect_error) {
 <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fa" style="color: white;">&#xf08c;</i></a>
     </div>
   </div>
-</div>
-<footer class="foot text-center">
-  <a href="#myPage" title="To Top">
+  <a href="#myPage" title="Back to the top panel">
     <span class="glyphicon glyphicon-chevron-up"></span>
   </a>
-  <p style="color: white;">&#169; Copyright 2022. reuwinnWinnieWinners.</p>
 </footer>
-  
 
   
   </body>
