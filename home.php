@@ -310,9 +310,11 @@ if ($conn->connect_error) {
   </div>
   <a href="#myPage" title="Back to the top panel">
     <span class="glyphicon glyphicon-chevron-up"></span>
-  </a>
+  </a><br><br><br>
+  <div class="col-sm-12" style="background-color:rgba(22, 60, 215, 0.763)">
+  <i class="fa fa-copyright" aria-hidden="true"></i> Copyright 2020. reuwinnWinnieWinners.
+</div>
 </footer>
-
   
   </body>
   </html>

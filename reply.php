@@ -17,8 +17,8 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM patients";
 $results = $conn->query($sql);
 
-if ($results->num_rows > 0) {
-    echo "<body style='background-color:#171515'><link rel='stylesheet' href='table.css'><a href='index.php' style='color:white;text-decoration:none'>
+if ($results->num_rows > 0)  {
+    echo "<body style='background-color:#171515'><link rel='stylesheet' href='table.css'><a href='index.php' style='color:white;text-decoration:none;margin-left:900px'>
 	Dashboard</a><table><center style='color:white'>Doctor's reply<hr><br></center>
 		  <tr>
 		  <th>Id</th>

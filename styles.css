@@ -117,12 +117,6 @@ body {
   .bg-grey {
     background-color: #f6f6f6;
   }
-  #c{
-    text-align: center;
-    background-color:rgba(39, 89, 4, 0.755) ;
-    width: 100%;
-    color:white;
-  }
   #lg{
     width: 100px;
     height: 100px;
